@@ -51,10 +51,10 @@ const MapComponent = ({ data = [] }) => {
   }, [activeDataset, isPaused]);
 
   useEffect(() => {
-    if (activeDataset.length - 1 === index) {
+    if (activeDataset?.length - 1 === index) {
       setStartSimulation(false);
     }
-  }, [index]);
+  }, [index, activeDataset]);
 
   return (
     <div className="mapComp">
