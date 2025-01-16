@@ -1,0 +1,18 @@
+@import "./containers/simulator";
+
+@import "./components/map-component";
+@import "./components/path-data-table";
+@import "./components/path-input";
+@import "./components/upload-file";
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+}
