@@ -29,6 +29,7 @@ const MapComponent = ({ data = [] }) => {
   const [activeDataset, setActiveDataset] = useState([]);
   const [startSimulation, setStartSimulation] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [seekValue, setSeekValue] = useState(0);
 
   const handleSimulate = () => {
     if (!data?.length) {
@@ -39,6 +40,12 @@ const MapComponent = ({ data = [] }) => {
     setIndex(0);
     setActiveDataset(data);
     setStartSimulation(true);
+  };
+
+  const handleSeekChange = (event) => {
+    const newIndex = parseInt(event.target.value, 10);
+    setIndex(newIndex);
+    setSeekValue(newIndex);
   };
 
   useEffect(() => {
@@ -66,8 +73,15 @@ const MapComponent = ({ data = [] }) => {
             {isPaused ? "Resume" : "Pause"}
           </button>
         )}
+        <input
+          type="range"
+          min="0"
+          max={activeDataset.length - 1}
+          value={seekValue}
+          onChange={handleSeekChange}
+        />
       </div>
-      <LoadScript googleMapsApiKey={process.env.GOOGLE_MAPS_API_KEY}>
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={activeDataset?.[0] || center}
