@@ -3,6 +3,9 @@
 
 This project used React's UI capabilities and Google Maps to create an simulation tool that visualizes drone motion in real time based on data proviede by user.
 
+**Deployed link:** - https://flytbase-simulator.netlify.app/
+**Sample Data File:** I have also added a sample data file in this repo on root level. The name of the file is dummyPathData.json.
+
 
 
 ## Features
@@ -60,6 +63,4 @@ Start the server
 ```bash
   npm run start
 ```
-
-**Sample Data File:** I have also added a sample data file in this repo on root level. The name of the file is dummyPathData.json.
 
