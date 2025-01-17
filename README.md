@@ -64,6 +64,3 @@ Start the server
 ```bash
   npm run start
 ```
-
-**Sample Data File:** I have also added a sample data file in this repo on root level. The name of the file is dummyPathData.json.
-
